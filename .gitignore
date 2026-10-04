@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# credentials and local config
+.env
+.env.*
+!.env.example
+.minecraft-auth/
+
+# logs and captures
+*.log
+logs/
+packets*.jsonl
+.coverage/
+
+# local tooling state
+.atl/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

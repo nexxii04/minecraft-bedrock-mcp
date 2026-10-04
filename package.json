@@ -1,0 +1,68 @@
+{
+  "name": "minecraft-bedrock-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that bridges AI agents to Minecraft Bedrock Edition servers as a real game client",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "minecraft",
+    "minecraft-bedrock",
+    "bedrock",
+    "ai-agent",
+    "automation",
+    "qa",
+    "bedrock-protocol"
+  ],
+  "author": "Nexxii",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexxii04/minecraft-bedrock-mcp.git"
+  },
+  "homepage": "https://github.com/nexxii04/minecraft-bedrock-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/nexxii04/minecraft-bedrock-mcp/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "minecraft-bedrock-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "inspect:packets": "tsx scripts/inspect-packets.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "bedrock-protocol": "^3.60.1",
+    "dotenv": "^17.2.3",
+    "minecraft-data": "^3.117.0",
+    "pino": "^10.3.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.5",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.7",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.8",
+    "vitest": "^5.0.1"
+  }
+}
